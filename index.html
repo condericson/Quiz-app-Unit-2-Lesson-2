@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Psychology Quiz App</title>
+	<link rel="stylesheet" href="quiz.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto">
+</head>
+<body>
+	<div class="container">
+		<h1>Psychology Quiz</h1>
+		<div class="introduction" id="introduction">
+			<p>This is a basic Psychology quiz. You will be asked 5 questions on the topic of psychology. Once you've made your selection, press "Submit" to confirm your selection. To start over, press the "Start Over" button.</p>
+			<p>To start, click the "Start" button.</p>
+			<button type="start" id="startbutton">Start</button>
+		</div>
+
+
+<!-- <div class="greenarrow"></div> -->
+
+
+		<form id='question1' class="questionbox hidden">
+			<h3>Question 1 of 5</h3>
+			<p>If Johnny were to get a sticker everytime he gave the correct answer in class, you could say his behavior for answering questions correctly was being:</p>
+			<span><input class='q1incorrect' type="radio" name="q1" value="incorrect" required><label>A. Positively punished</label></span>
+			<span><input id='q1correct' type="radio" name="q1" value="correct" required><label>B. Positively reinforced</label></span>
+			<span><input class='q1incorrect' type="radio" name="q1" value="incorrect" required><label>C. Negatively punished</label></span>
+			<span><input class='q1incorrect' type="radio" name="q1" value="incorrect" required><label>D. Negatively reinforced</label></span>
+			<button id="cont1" type="submit" class="hidden">Continue</button><button id="q1submit" type="submit">Submit</button>
+			<button class="startover" type="startover">Start Over</button>
+		</form>
+
+		<form id='question2' class="questionbox hidden">
+			<h3>Question 2 of 5</h3>
+			<p>If Johnny were to scream every time his parents served him carrots, and his parents always took away the carrots when he screamed, you could say Johnny's behavior of screaming was being:</p>
+			<span><input class='q2incorrect' type="radio" name="q2" value="incorrect" required><label>A. Positively punished</label></span>
+			<span><input class='q2incorrect' type="radio" name="q2" value="incorrect" required><label>B. Negatively punished</label></span>
+			<span><input class='q2incorrect' type="radio" name="q2" value="incorrect" required><label>C. Positively reinforced</label></span>
+			<span><input id='q2correct' type="radio" name="q2" value="correct" required><label>D. Negatively reinforced</label></span>
+			<button id="cont2" type="submit" class="hidden">Continue</button><button id="q2submit" type="submit">Submit</button>
+			<button class="startover" type="startover">Start Over</button>
+		</form>
+
+		<form id='question3' class="questionbox hidden">
+			<h3>Question 3 of 5</h3>
+			<p>What famous psychologist was know for his experiments in training dogs to drool at the sound of a buzzer?</p>
+			<span><input class='q3incorrect' type="radio" name="q3" value="incorrect" required><label>A. Watson</label></span>
+			<span><input class='q3incorrect' type="radio" name="q3" value="incorrect" required><label>B. Skinner</label></span>
+			<span><input id='q3correct' type="radio" name="q3" value="correct" required><label>C. Pavlov</label></span>
+			<span><input class='q3incorrect' type="radio" name="q3" value="incorrect" required><label>D. Nixon</label></span>
+			<button id="cont3" type="submit" class="hidden">Continue</button><button id="q3submit" type="submit">Submit</button>
+			<button class="startover" type="startover">Start Over</button>
+		</form>
+
+		<form id='question4' class="questionbox hidden">
+			<h3>Question 4 of 5</h3>
+			<p>Sally likes to eat chocolate. When she sees a candy store in the mall, she asks her mom if she can go get chocolate. Her mother reponds saying that they can go get chocolate. If this situation, what is the antecedent?</p>
+			<span><input id='q4correct' type="radio" name="q4" value="correct" required><label>A. The presence of the candy store</label></span>
+			<span><input class='q4incorrect' type="radio" name="q4" value="incorrect" required><label>B. Asking her mother for chocolate</label></span>
+			<span><input class='q4incorrect' type="radio" name="q4" value="incorrect" required><label>C. The chocolate</label></span>
+			<span><input class='q4incorrect' type="radio" name="q4" value="incorrect" required><label>D. Going to the mall</label></span>
+			<button id="cont4" type="submit" class="hidden">Continue</button><button id="q4submit" type="submit">Submit</button>
+			<button class="startover" type="startover">Start Over</button>
+		</form>
+
+		<form id='question5' class="questionbox hidden">
+			<h3>Question 5 of 5</h3>
+			<p>When Timmy hits his sister, his mother scolds him, giving him a long talk about hitting. After the scolding, his mother ignores him for most of the day. Then, when he hits his sister again, his mother scolds him. What would most likely be the primary function of Timmy hitting his mother?</p>
+			<span><input class='q5incorrect' type="radio" name="q5" value="incorrect" required><label>A. Seeking access to materials</label></span>
+			<span><input class='q5incorrect' type="radio" name="q5" value="incorrect" required><label>B. Sensory stimulation</label></span>
+			<span><input class='q5incorrect' type="radio" name="q5" value="incorrect" required><label>C. Escape</label></span>
+			<span><input id='q5correct' type="radio" name="q5" value="correct" required><label>D. Attention</label></span>
+			<button id="cont5" type="submit" class="hidden">Continue</button><button id="q5submit" type="submit">Submit</button>
+			<button class="startover" type="startover">Start Over</button>
+		</form>
+
+
+		<h2 id="correctindicator" class='hidden'>Correct!</h2> <h2 id="incorrectindicator" class="hidden">Incorrect!</h2>
+
+		<div id='correctcounter' class="correctcounter hidden">
+			<span>Answered <span id="numbercorrect"></span> correctly of <span id="questionnumber"></span>.</span>
+		</div>
+		
+		<p id="finalp" class="hidden">Congratulations! You answered <span id='finalcount'></span> out of 5 questions correctly!</p>
+		<button id="laststartover" class="startover hidden" type="startover">Start Over</button>
+
+
+
+</div>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script type="text/javascript" src="quiz.js"></script>
+</body>
+</html>
